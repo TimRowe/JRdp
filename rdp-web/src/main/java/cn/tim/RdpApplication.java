@@ -1,4 +1,4 @@
-package cn.tim.rdp.web;
+package cn.tim;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

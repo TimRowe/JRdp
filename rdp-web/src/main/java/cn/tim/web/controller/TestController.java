@@ -1,13 +1,18 @@
-package cn.tim.rdp.web.controllers;
+package cn.tim.web.controller;
 
+import cn.tim.service.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class TestController {
+    @Autowired
+    private User user;
+
     @GetMapping(value = "/test")
     public String Test() {
-        return "222";
+        return user.getName();
     }
 
 
