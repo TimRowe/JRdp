@@ -11,6 +11,7 @@
     <modules>
         <module>rdp-common</module>
         <module>rdp-web</module>
+        <module>rdp-spring-demo</module>
     </modules>
 
 
