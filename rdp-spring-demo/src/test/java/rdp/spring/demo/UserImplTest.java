@@ -11,19 +11,20 @@ public class UserImplTest {
     @Test
     public void getName() {
         //创建
-        ApplicationContext context=new AnnotationConfigApplicationContext(SpringConfiguration.class);
+        //ApplicationContext context=new AnnotationConfigApplicationContext(SpringConfiguration.class);
         //从容器中获取bean的实例
         //方式1：根据类型容器中获取bean实例
-        User service1 = context.getBean(User.class);
+        //User service1 = context.getBean(User.class);
 
-        System.out.println(service1.hashCode());
+        /*System.out.println(service1.hashCode());
 
         User service2 = context.getBean(User.class);
         System.out.println(service2.hashCode());
 
         System.out.println(service1.equals(service2));
 
-        System.out.println(service1.getName());
+        System.out.println(service1.getName());*/
+
 
     }
 }

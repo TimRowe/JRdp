@@ -7,7 +7,7 @@
     <groupId>cn.tim</groupId>
     <artifactId>rdp</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <modules>
         <module>rdp-common</module>
         <module>rdp-web</module>

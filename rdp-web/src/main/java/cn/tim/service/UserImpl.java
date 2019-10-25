@@ -2,7 +2,10 @@ package cn.tim.service;
 
 import org.springframework.stereotype.Service;
 
-@Service
+/**
+ * @author 10011531
+ */
+@Service("UserImplService")
 public class UserImpl implements  User{
     @Override
     public String getName() {
