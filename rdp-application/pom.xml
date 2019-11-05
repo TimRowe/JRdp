@@ -11,7 +11,7 @@
     <version>1.0</version>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>rdp-web</artifactId>
+    <artifactId>rdp-application</artifactId>
 
     <dependencies>
         <dependency>
@@ -43,13 +43,11 @@
             <artifactId>mssql-jdbc</artifactId>
         </dependency>
 
-
-
         <!--依赖自己的类库-->
         <dependency>
-            <groupId>cn.tim</groupId>
-            <artifactId>rdp-spring-demo</artifactId>
-            <version>1.0</version>
+            <groupId>com.rdp</groupId>
+            <artifactId>rdp-system</artifactId>
+            <version>1.0.0</version>
         </dependency>
 
     </dependencies>

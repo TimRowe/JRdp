@@ -1,12 +1,13 @@
-package cn.tim.web.controller;
+package com.rdp.application.controller;
 
-import cn.tim.mapper.UserMasterMapper;
-import cn.tim.service.User;
+
+import com.rdp.service.User;
+import com.rdp.service.UserImpl;
+import com.rdp.system.mapper.UserMasterMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import rdp.spring.demo.User2Impl;
-import rdp.spring.demo.UserImpl;
+
 
 
 /**

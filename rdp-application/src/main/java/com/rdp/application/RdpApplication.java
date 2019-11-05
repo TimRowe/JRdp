@@ -1,4 +1,4 @@
-package cn.tim;
+package com.rdp.application;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
