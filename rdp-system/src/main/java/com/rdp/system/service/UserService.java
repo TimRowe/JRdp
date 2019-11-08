@@ -1,8 +1,9 @@
-package cn.tim.mapper;
+package com.rdp.system.service;
 
-import cn.tim.model.UserMaster;
+import com.rdp.system.domain.UserMaster;
 
-public interface UserMasterMapper {
+public interface UserService{
+
     int deleteByPrimaryKey(String userId);
 
     int insert(UserMaster record);

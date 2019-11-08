@@ -1,4 +1,4 @@
-package cn.tim.model;
+package com.rdp.system.domain;
 
 import java.util.Date;
 

@@ -1,9 +1,10 @@
 package com.rdp.application.controller;
 
 
-import com.rdp.service.User;
-import com.rdp.service.UserImpl;
-import com.rdp.system.mapper.UserMasterMapper;
+
+import com.rdp.system.mapper.*;
+import com.rdp.system.service.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,20 +22,9 @@ public class TestController {
         public String userId;
     }
 
-
     @Autowired
-    private User user;
+    private UserService userService;
 
-    @Autowired
-    private UserMasterMapper userMasterMapper;
-
-    @Autowired
-    private UserImpl userImpl;
-
-    @GetMapping(value = "/test")
-    public String test() {
-        return user.getName();
-    }
 
     @GetMapping(value = "/testObj")
     public JsonObj testObj() {
@@ -44,11 +34,8 @@ public class TestController {
 
     @GetMapping(value = "/test1")
     public String test1() {
-        return userMasterMapper.selectByPrimaryKey("10030753").getUserName();
+        return userService.selectByPrimaryKey("10030753").getUserName();
     }
 
-    @GetMapping(value = "/test2")
-    public String test3() {
-        return userImpl.getName();
-    }
+
 }

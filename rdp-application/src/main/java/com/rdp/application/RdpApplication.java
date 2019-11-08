@@ -7,8 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @author 10011531
  */
-@SpringBootApplication(scanBasePackages = {"cn.tim.*", "rdp.*"})
-@MapperScan("cn.tim.mapper")
+@SpringBootApplication(scanBasePackages = {"com.rdp.*", "rdp.*"})
+@MapperScan("com.rdp.system.mapper")
 public class RdpApplication {
 
 	public static void main(String[] args) {
