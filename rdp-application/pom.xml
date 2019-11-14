@@ -19,6 +19,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--实现热部署-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -26,14 +27,14 @@
             <optional>true</optional>
         </dependency>
 
-
-
         <!--MyBatis使用-->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>2.0.0</version>
         </dependency>
+
+        <!--Sql Server使用-->
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
@@ -44,6 +45,13 @@
             <groupId>com.rdp</groupId>
             <artifactId>rdp-system</artifactId>
             <version>1.0.0</version>
+        </dependency>
+
+        <!--用于生成注解-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
 
     </dependencies>
@@ -68,11 +76,7 @@
                     <overwrite>true</overwrite>
                 </configuration>
             </plugin>
-
         </plugins>
-
-
-
     </build>
 
 </project>
