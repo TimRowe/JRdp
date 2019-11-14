@@ -43,7 +43,7 @@
         <!--依赖自己的类库-->
         <dependency>
             <groupId>com.rdp</groupId>
-            <artifactId>rdp-system</artifactId>
+            <artifactId>rdp-framework</artifactId>
             <version>1.0.0</version>
         </dependency>
 
