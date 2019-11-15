@@ -12,11 +12,25 @@
     <artifactId>rdp-framework</artifactId>
 
     <dependencies>
+
+        <!--实现热部署-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
         <!--依赖自己的类库-->
         <dependency>
             <groupId>com.rdp</groupId>
             <artifactId>rdp-system</artifactId>
             <version>1.0.0</version>
+        </dependency>
+
+        <!--用于生成注解-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
 
         <dependency>

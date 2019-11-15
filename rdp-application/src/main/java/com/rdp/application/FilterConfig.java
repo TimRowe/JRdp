@@ -5,11 +5,14 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * @author 10011531
+ */
 @Configuration
 public class FilterConfig {
 
     @Bean
-    public FilterRegistrationBean registFilter() {
+    public FilterRegistrationBean registerFilter() {
         FilterRegistrationBean registration = new FilterRegistrationBean();
         registration.setFilter(new LogCostFilter());
         registration.addUrlPatterns("/*");
