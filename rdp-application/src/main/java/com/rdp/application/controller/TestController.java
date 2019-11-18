@@ -1,4 +1,5 @@
 package com.rdp.application.controller;
+import com.rdp.system.domain.UserMaster;
 import com.rdp.system.service.*;
 import jdk.internal.net.http.common.Log;
 import lombok.extern.slf4j.Slf4j;
@@ -34,7 +35,18 @@ public class TestController {
     @GetMapping(value = "/test1")
     public String test1() {
         log.debug("TestController/test1");
+        log.debug("罗梯");
         return userService.selectByPrimaryKey("10030753").getUserName();
+    }
+
+    @GetMapping(value = "/testInsert")
+    public String testInsert() {
+        log.debug("TestController/test1");
+        UserMaster user = new UserMaster();
+        user.setUserId("100203695");
+        user.setUserName("罗梯");
+
+        return userService.insertSelective(user) + "";
     }
 
 
