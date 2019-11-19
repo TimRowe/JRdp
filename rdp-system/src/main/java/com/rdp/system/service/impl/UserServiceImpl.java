@@ -1,6 +1,7 @@
 package com.rdp.system.service.impl;
 
 import com.rdp.system.domain.UserMaster;
+import com.rdp.system.mapper.UserMasterMapper;
 import com.rdp.system.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

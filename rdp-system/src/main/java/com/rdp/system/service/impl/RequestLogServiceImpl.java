@@ -1,6 +1,7 @@
 package com.rdp.system.service.impl;
 
 import com.rdp.system.domain.RequestLog;
+import com.rdp.system.mapper.RequestLogMapper;
 import com.rdp.system.service.RequestLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
