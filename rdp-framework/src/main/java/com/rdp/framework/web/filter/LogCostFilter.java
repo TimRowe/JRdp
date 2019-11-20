@@ -1,16 +1,12 @@
 package com.rdp.framework.web.filter;
-import java.util.Date;
 
+import java.util.Date;
 import com.rdp.system.domain.RequestLog;
 import com.rdp.system.service.RequestLogService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.connector.RequestFacade;
-import org.apache.catalina.connector.ResponseFacade;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import javax.servlet.*;
-import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.UUID;
 
@@ -35,18 +31,18 @@ public class LogCostFilter implements Filter {
         filterChain.doFilter(servletRequest,servletResponse);
 
         //获取执行时间
-        long timeSpan = System.currentTimeMillis()-start;
+        var timeSpan = System.currentTimeMillis()-start;
 
         System.out.println("Execute cost=" + timeSpan);
 
-        RequestFacade request = (RequestFacade)servletRequest;
+        var request = (RequestFacade)servletRequest;
 
         if (request.getServletPath().contains(".")) {
             return;
         }
 
         //获取全路径
-        String url = request.getScheme() +"://" + request.getServerName() + ":" +request.getServerPort()  + request.getServletPath();
+        var url = request.getScheme() +"://" + request.getServerName() + ":" +request.getServerPort()  + request.getServletPath();
 
         if (request.getQueryString() != null){
             url += "?" + request.getQueryString();
@@ -68,7 +64,7 @@ public class LogCostFilter implements Filter {
         is.read(data1);
 */
 
-        RequestLog log = new RequestLog();
+        var log = new RequestLog();
         log.setSeq(UUID.randomUUID().toString());
         log.setProgramId(0);
         log.setProgramName("");

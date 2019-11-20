@@ -29,6 +29,12 @@
             <optional>true</optional>
         </dependency>
 
+        <!--spring boot关闭-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
         <!--Sql Server使用-->
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
@@ -56,6 +62,8 @@
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>1.1.10</version>
         </dependency>
+
+
 
     </dependencies>
 

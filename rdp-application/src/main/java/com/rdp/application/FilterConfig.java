@@ -15,7 +15,7 @@ public class FilterConfig {
 
     @Bean
     public FilterRegistrationBean registerFilter() {
-        FilterRegistrationBean registration = new FilterRegistrationBean();
+        var registration = new FilterRegistrationBean();
         registration.setFilter(this.logCostFilter());
         registration.addUrlPatterns("/*");
         registration.setName("LogCostFilter");

@@ -13,6 +13,7 @@ public class RdpApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RdpApplication.class, args);
+
 	}
 
 }
