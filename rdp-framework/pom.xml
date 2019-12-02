@@ -40,6 +40,13 @@
             <scope>provided</scope>
         </dependency>
 
+        <!--获取浏览器工具-->
+        <dependency>
+            <groupId>eu.bitwalker</groupId>
+            <artifactId>UserAgentUtils</artifactId>
+            <version>1.21</version>
+        </dependency>
+
     </dependencies>
 
 
