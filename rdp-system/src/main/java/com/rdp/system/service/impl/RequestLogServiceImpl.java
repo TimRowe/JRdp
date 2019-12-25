@@ -6,6 +6,8 @@ import com.rdp.system.service.RequestLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RequestLogServiceImpl implements RequestLogService {
 
@@ -40,5 +42,10 @@ public class RequestLogServiceImpl implements RequestLogService {
     @Override
     public int updateByPrimaryKey(RequestLog record) {
         return requestLogMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public int batchInsert(List<RequestLog> recordList) {
+        return requestLogMapper.batchInsert(recordList);
     }
 }

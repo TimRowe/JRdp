@@ -150,6 +150,7 @@
       </if>
     </trim>
   </insert>
+
   <update id="updateByPrimaryKeySelective" parameterType="com.rdp.system.domain.RequestLog">
     update tbCOM_Request_Log
     <set>
@@ -220,4 +221,23 @@
       Response_Content = #{responseContent,jdbcType=NVARCHAR}
     where Seq = #{seq,jdbcType=CHAR}
   </update>
+
+  <insert id="batchInsert">
+    insert into tbCOM_Request_Log (Seq, Program_Id, Program_Name,
+    Method, Url, Absolute_Path,
+    IP, Time_Span, Create_Time,
+    User_Id, Url_Refeerer, Server_Ip,
+    Browser_Version, Platform, Request_Content,
+    Response_Content)
+    values
+    <foreach  collection="list" item="item" separator=",">
+    (#{item.seq,jdbcType=CHAR}, #{item.programId,jdbcType=INTEGER}, #{item.programName,jdbcType=NVARCHAR},
+    #{item.method,jdbcType=VARCHAR}, #{item.url,jdbcType=NVARCHAR}, #{item.absolutePath,jdbcType=VARCHAR},
+    #{item.ip,jdbcType=VARCHAR}, #{item.timeSpan,jdbcType=BIGINT}, #{item.createTime,jdbcType=TIMESTAMP},
+    #{item.userId,jdbcType=VARCHAR}, #{item.urlRefeerer,jdbcType=NVARCHAR}, #{item.serverIp,jdbcType=VARCHAR},
+    #{item.browserVersion,jdbcType=VARCHAR}, #{item.platform,jdbcType=NVARCHAR}, #{item.requestContent,jdbcType=NVARCHAR},
+    #{item.responseContent,jdbcType=NVARCHAR})
+    </foreach>
+  </insert>
+
 </mapper>

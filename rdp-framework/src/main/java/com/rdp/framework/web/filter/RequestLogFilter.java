@@ -15,8 +15,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.util.Date;
-import java.util.UUID;
+import java.util.*;
+import java.util.concurrent.*;
+
+import static java.lang.Integer.min;
 
 /**
  * 记录访问日志
@@ -28,6 +30,30 @@ public class RequestLogFilter extends OncePerRequestFilter {
     @Autowired
     private RequestLogService requestLogService;
 
+    /**
+     * 日志队列
+     */
+    private static ConcurrentLinkedQueue logQueue = new ConcurrentLinkedQueue();
+    private ScheduledExecutorService executorService;
+    private final static int maxLogItems = 1000;
+
+    public RequestLogFilter() {
+
+        executorService = Executors.newSingleThreadScheduledExecutor();
+        executorService.scheduleWithFixedDelay(() -> {
+            if(!logQueue.isEmpty()){
+                var list = new ArrayList<RequestLog>(logQueue.size());
+
+                for(var thousand = 0; thousand <= logQueue.size()/maxLogItems; ++thousand){
+                    for (var i = 0; i < Math.min(logQueue.size(), 1000); ++i){
+                        list.add((RequestLog)logQueue.poll());
+                    }
+                    requestLogService.batchInsert(list);
+                    list.clear();
+                }
+            }
+        }, 1, 10, TimeUnit.SECONDS);
+    }
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
@@ -65,7 +91,11 @@ public class RequestLogFilter extends OncePerRequestFilter {
         log.setPlatform("");
         log.setRequestContent(requestPayload);
         log.setResponseContent(responsePayload);
-        requestLogService.insertSelective(log);
+        logQueue.add(log);
+
+
+
+        //requestLogService.insertSelective(log);
     }
 
     /**

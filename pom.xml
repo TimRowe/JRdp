@@ -16,10 +16,10 @@
     <version>1.0.0</version>
     <modules>
         <module>rdp-common</module>
-        <module>rdp-application</module>
         <module>rdp-spring-demo</module>
         <module>rdp-system</module>
         <module>rdp-framework</module>
+        <module>rdp-application</module>
     </modules>
 
     <dependencies>

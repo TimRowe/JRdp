@@ -3,6 +3,8 @@ package com.rdp.system.service;
 import com.rdp.system.domain.RequestLog;
 import com.rdp.system.domain.UserMaster;
 
+import java.util.List;
+
 public interface RequestLogService {
 
     int deleteByPrimaryKey(String seq);
@@ -16,4 +18,6 @@ public interface RequestLogService {
     int updateByPrimaryKeySelective(RequestLog record);
 
     int updateByPrimaryKey(RequestLog record);
+
+    int batchInsert(List<RequestLog> recordList);
 }
